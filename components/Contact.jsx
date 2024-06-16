@@ -5,7 +5,8 @@ export default function Contact() {
         {/* insert map */}
         <h3>To receive a quote or more information about our services.</h3>
         <h4>Fill out the form below and we will contact you</h4>
-        <form name="Contact" netlify>
+        <form name="contact" action="/success" method="POST" data-netlify="true">
+		<input type="hidden" name="form-name" value="contact" />
 		<p>
 			<label>Name <input type="text" name="name" /></label>
 		</p>
