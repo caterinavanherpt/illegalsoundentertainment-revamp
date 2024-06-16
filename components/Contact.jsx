@@ -6,7 +6,16 @@ export default function Contact() {
         <h3>To receive a quote or more information about our services.</h3>
         <h4>Fill out the form below and we will contact you</h4>
         <form name="Contact" netlify>
-            <ul>
+		<p>
+			<label>Name <input type="text" name="name" /></label>
+		</p>
+		<p>
+			<label>Email <input type="email" name="email" /></label>
+		</p>
+		<p>
+			<button type="submit">Send</button>
+		</p>
+            {/* <ul>
 				<li>
 					<label for="First and Last Name">First and Last Name</label>
 					<input type="text" name="First and Last Name"/>
@@ -46,7 +55,7 @@ export default function Contact() {
 				<li>
 					<button type="submit">Submit</button>
 				</li>
-            </ul>
+            </ul> */}
         </form>
         <h4>Contact Us</h4>
       </section>
