@@ -1,11 +1,27 @@
 export default function Contact() {
+
+	const handleSubmit = (event) => {
+		event.preventDefault();
+		
+		const myForm = event.target;
+		const formData = new FormData(myForm);
+		
+		fetch("/", {
+			method: "POST",
+			headers: { "Content-Type": "application/x-www-form-urlencoded" },
+			body: new URLSearchParams(formData).toString(),
+		})
+			.then(() => alert("/thank-you/"))
+			.catch((error) => alert(error));
+		};
+		
     return (
       <section>
         <h2>Contact Us</h2>
         {/* insert map */}
         <h3>To receive a quote or more information about our services.</h3>
         <h4>Fill out the form below and we will contact you</h4>
-        <form name="contact" method="post" netlify>
+        <form name="contact" method="post" netlify onSubmit={handleSubmit}>
 			<input type="hidden" name="form-name" value="contact" />
 			<p>
 				<label>Name <input type="text" name="name" /></label>
